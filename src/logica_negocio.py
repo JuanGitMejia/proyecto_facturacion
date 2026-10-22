@@ -19,10 +19,11 @@ def calcular_descuento(subtotal_bruto: float, tipo_cliente: str) -> float:
     else:
         return 0.0
 
+
 def procesar_factura(subtotal_bruto: float, tipo_cliente: str) -> dict:
     """Integra los cálculos de descuento, IGV y total a pagar."""
     TASA_IGV: float = 0.18
-    
+
     monto_descuento: float = calcular_descuento(subtotal_bruto, tipo_cliente)
     subtotal_con_descuento: float = subtotal_bruto - monto_descuento
     monto_igv: float = subtotal_con_descuento * TASA_IGV
@@ -34,6 +35,7 @@ def procesar_factura(subtotal_bruto: float, tipo_cliente: str) -> dict:
         "igv": round(monto_igv, 2),
         "total_pagar": round(total_a_pagar, 2)
     }
+
 
 def validar_numero_positivo(entrada_texto: str) -> bool:
     """Valida si el texto ingresado es un número decimal positivo válido."""
