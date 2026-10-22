@@ -34,6 +34,8 @@ def ejecutar_auditoria():
             "-----------------------------------------------------\n")
         archivo.write(
             f"Subtotal de Control    : S/ {
+
+                
                 factura_control['subtotal_bruto']:.2f}\n"
         )
         archivo.write(
