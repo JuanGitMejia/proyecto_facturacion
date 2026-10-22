@@ -22,25 +22,35 @@ def ejecutar_auditoria():
 
     with open(nombre_archivo, "w", encoding="utf-8") as archivo:
         archivo.write("=====================================================\n")
-        archivo.write("   COMERCIAL CHICLAYO - INFORME TECNICO DE AUDITORIA\n")
+        archivo.write(
+            "   COMERCIAL CHICLAYO - INFORME TECNICO DE AUDITORIA\n"
+        )
         archivo.write("=====================================================\n")
         archivo.write(f"Fecha de Certificacion : {fecha_actual}\n")
-        archivo.write("Entorno de Evaluacion  : GitHub Actions Runner (Ubuntu)\n")
-        archivo.write("Estado de Integridad   : SISTEMA TOTALMENTE OPERATIVO\n")
+        archivo.write(
+            "Entorno de Evaluacion  : GitHub Actions Runner (Ubuntu)\n"
+        )
+        archivo.write(
+            "Estado de Integridad   : SISTEMA TOTALMENTE OPERATIVO\n"
+        )
         archivo.write("-----------------------------------------------------\n")
         archivo.write(
-            f"Subtotal de Control    : S/ {factura_control['subtotal_bruto']:.2f}\n"
+            f"Subtotal de Control    : S/ "
+            f"{factura_control['subtotal_bruto']:.2f}\n"
         )
         archivo.write(
-            f"Descuento VIP (15%)    : S/ {factura_control['descuento']:.2f}\n"
+            f"Descuento VIP (15%)    : S/ "
+            f"{factura_control['descuento']:.2f}\n"
         )
         archivo.write(
-            f"Total Liquidado        : S/ {factura_control['total_pagar']:.2f}\n"
+            f"Total Liquidado        : S/ "
+            f"{factura_control['total_pagar']:.2f}\n"
         )
         archivo.write("=====================================================\n")
 
     print(
-        f"Auditoria finalizada con exito. Archivo generado: {nombre_archivo}"
+        f"Auditoria finalizada con exito. "
+        f"Archivo generado: {nombre_archivo}"
     )
     sys.exit(0)
 
